@@ -13,8 +13,9 @@ import { UserComponent } from "../../pages/user/user.component";
 import { TablesComponent } from "../../pages/tables/tables.component";
 import { TypographyComponent } from "../../pages/typography/typography.component";
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
-
+import { AdminLayoutComponent } from "./admin-layout.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { SharedModule } from "../../shared/shared.module";
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     FormsModule,
     HttpClientModule,
     NgbModule,
+    SharedModule
   ],
   declarations: [
     DashboardComponent,
@@ -32,6 +34,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     TypographyComponent,
     NotificationsComponent,
     MapComponent,
+    AdminLayoutComponent
     // RtlComponent
   ]
 })
