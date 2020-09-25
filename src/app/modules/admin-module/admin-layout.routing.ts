@@ -13,7 +13,7 @@ export const AdminLayoutRoutes: Routes = [
 
     { path: "", component: AdminLayoutComponent,children:
       [
-        { path: "", component: DashboardComponent},
+        { path: "", redirectTo: 'dashboard',pathMatch:'full'},
         { path: "dashboard", component: DashboardComponent},
         { path: "icons", component: IconsComponent },
         { path: "maps", component: MapComponent },
@@ -26,3 +26,4 @@ export const AdminLayoutRoutes: Routes = [
 
 
 ];
+    
