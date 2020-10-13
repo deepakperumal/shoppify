@@ -1,0 +1,12 @@
+.global-register-bg
+{
+    background: url("#{$asset-images-path}/reg-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}  
+
+.form-text-dark{
+    color: $dark !important;
+    background:$light !important;
+}

@@ -1,4 +1,13 @@
-.wrapper
+.login-form
 {
-    color:$red
+
+    width: 63%;
+    margin: 0 auto;
+    .login-form{
+        background-color:$light !important;
+        color:#000000 !important;
+    }
+    .login-form:focus{
+        border-color: $dark
+    }
 }

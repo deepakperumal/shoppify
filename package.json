@@ -74,6 +74,7 @@
     "bulma": "^0.9.0",
     "chart.js": "2.8.0",
     "core-js": "3.6.4",
+    "ngx-custom-validators": "^9.1.0",
     "ngx-toastr": "10.0.4",
     "rxjs": "6.5.2",
     "tslib": "1.10.0",

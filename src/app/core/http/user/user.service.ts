@@ -1,24 +1,26 @@
 import { Injectable } from '@angular/core'
-import { HttpClient  } from '@angular/common/http'
+import { URL } from 'config/config'
+import { restUrl } from 'config/rest-api'
+import { RestApiService } from 'core/services/rest-api.service'
 
+ 
 @Injectable()
 
 export class UserService
 {
 
-    constructor(private http:HttpClient)
+    constructor(private rest:RestApiService)
     {
 
     }
     
-    register()
+    register(payload)
     {
-        this.http.get('http://localhost:3000').subscribe(function(data){
-
-            console.log(data)
-
-        })
+        return this.rest.post(`${URL}/${restUrl.register}`,payload)
     }
-
+    login(payload)
+    {
+        return this.rest.post(`${URL}/${restUrl.login}`,payload)
+    }
 
 }
