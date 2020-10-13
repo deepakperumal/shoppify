@@ -1,0 +1,11 @@
+.registration-form
+{
+    width: 63%;
+}
+
+@media screen and (max-width: 720px) {
+    .registration-form
+    {
+        width: 100% !important;
+    }
+  }

@@ -1,1 +1,73 @@
-reg
+<section>
+    <div class="container mt-md-5 mt-3">
+     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+              <div class="row">
+                <div class="col text-center">
+                  <h1>Register</h1>
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col mt-4">
+                  <input type="text" class="form-control form-text-dark" placeholder="Company Name" formControlName="name">
+                  <span class="text-secondary"
+                  *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required">
+                  Name is required
+                 </span>
+                </div>
+              </div>
+              <div class="row align-items-center mt-4">
+                <div class="col">
+                  <input type="email" class="form-control form-text-dark" placeholder="Email" formControlName="email">
+                  <span class="text-secondary"
+                  *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">
+                  Email is required
+                  </span>
+                  <span class="text-secondary"
+                  *ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.email">
+                  Enter a valid email address
+                 </span>
+                </div>
+              </div>
+              <div class="row align-items-center mt-4">
+                <div class="col">
+                  <input type="password" class="form-control form-text-dark" placeholder="Password" formControlName="password">
+                  <span class="text-secondary"
+                  *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
+                  Password is required
+                  </span>
+                  <span class="text-secondary"
+                  *ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.invalidPassword">
+                  Password not satisfactory
+                </span>
+                </div>
+                <div class="col">
+                  <input type="password" class="form-control form-text-dark" placeholder="Confirm Password" formControlName="confirmPassword">
+                  <span class="text-secondary"
+                  *ngIf="(registerFormControl.confirmPassword.touched || submitted)&& registerFormControl.confirmPassword.errors?.required">
+                  Confirm Password is required
+                </span>
+                <span class="text-secondary"
+                    *ngIf="registerFormControl.confirmPassword.touched && registerFormControl.confirmPassword.errors?.passwordMismatch">
+                    Passwords doesnot match
+                </span>
+                </div>
+              </div>
+              <div class="row justify-content-start mt-4">
+                <div class="col">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input">
+                      I Read and Accept <a href="https://www.froala.com">Terms and Conditions</a>
+                    </label>
+                  </div>
+    
+                  <button class="btn btn-primary mt-4">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+     </form>
+    </div>
+  </section>
