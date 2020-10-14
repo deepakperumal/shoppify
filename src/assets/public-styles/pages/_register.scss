@@ -1,6 +1,11 @@
 .registration-form
 {
     width: 63%;
+    .title
+    {
+        font-size: 30px !important;
+        color: $light-gray;
+    }
 }
 
 @media screen and (max-width: 720px) {
