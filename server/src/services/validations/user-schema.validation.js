@@ -1,11 +1,5 @@
 const Joi = require('@hapi/joi')
 
-const registrationSchema = {
-    name: Joi.string().min(6).required(),
-    email: Joi.string().min(3).required().email(),
-    role: Joi.string().required(),
-    password:Joi.string().required()
-}
 
 exports.userValidations = (options,params)=>{
 
@@ -13,7 +7,7 @@ exports.userValidations = (options,params)=>{
     {
         case 'registerUser':
             const registrationSchema = {
-                name: Joi.string().min(6).required(),
+                name: Joi.string().min(2).required(),
                 email: Joi.string().min(3).required().email(),
                 role: Joi.string().required(),
                 password:Joi.string().required()

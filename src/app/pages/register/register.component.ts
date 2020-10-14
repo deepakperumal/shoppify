@@ -49,32 +49,38 @@ export class RegisterComponent {
   onSubmit() {
     this.submitted = true;
     if (this.registerForm.valid) {
-      alert('Form Submitted succesfully!!!\n Check the values in browser console.');
-      console.table(this.registerForm.value);
+        let data =  this.registerForm.value
+        data.role = "admin"
+        delete data.confirmPassword
+        this.saveUser(data)
     }
   }
 
-  // register() {
-  //   const time = timer(2000);
-  //   this.userService.register(this.payload).subscribe((data) => {
-  //     if (data["status"] === "success") {
-  //       this.toastr.success(
-  //         'Registration Successful',
-  //         "",
-  //         {
-  //           timeOut: 1000,    
-  //           enableHtml: true,
-  //           toastClass: "alert alert-info alert-with-icon",
-  //           positionClass: "toast-top-right",
-  //         }
-  //       );
+  notificationsService(msg:string,status:string)
+  {
+    this.toastr.success(
+      msg,
+      "",
+      {
+        timeOut: 3000,    
+        enableHtml: true,
+        toastClass: `alert alert-${status} alert-with-icon`,
+        positionClass: "toast-top-right",
+      }
+    );
+  }
 
-  //       time.subscribe((i) => {
-  //         this.router.navigate(["auth/"]);
-  //       });
-  //      }
-  //   });
-  // }
+  saveUser(payload:object) {
+    const time = timer(4000);
+    this.userService.register(payload).subscribe((data) => {
+      if (data["status"] === "success") {
+        this.notificationsService('Registered Successful , Redirecting to login page','success')
+        time.subscribe((i) => {
+          this.router.navigate(["auth/"]);
+        });
+       }
+    },err => this.notificationsService(err,'warning'));
+  }
 
     ngAfterViewInit() {
       document.querySelector('body').classList.add('global-register-bg');
