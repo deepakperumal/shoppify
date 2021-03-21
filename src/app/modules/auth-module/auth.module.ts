@@ -21,7 +21,7 @@ import { UserService } from 'core/http/user/user.service'
     FormsModule, 
     ReactiveFormsModule
   
-  ],
+  ],  
   providers:[
     UserService
   ]
