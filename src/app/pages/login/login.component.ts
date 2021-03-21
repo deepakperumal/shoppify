@@ -35,7 +35,7 @@ export class LoginComponent {
     this.userService.login(this.payload).subscribe((data) => {
       if (data["status"] === "success") {
         this.storageService.setItem('token',data['token']);
-        this.storageService.setItem('user',data['data']);
+        this.storageService.setItem('userId',data['data']._id);
         this.notificationsService('Login Successful , Redirecting to dashboard','success')
         time.subscribe((i) => {
           this.router.navigate(["admin/"]);

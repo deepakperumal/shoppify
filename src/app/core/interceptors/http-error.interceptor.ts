@@ -12,6 +12,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
             errorMsg = `Error: ${error.error.message}`;
           }
           else {
+            error.error.data = error.error.data.message || error.error.data
             errorMsg = `Error Code: ${error.message},  Message: ${error.error.data}`;
           }
           return throwError(errorMsg);

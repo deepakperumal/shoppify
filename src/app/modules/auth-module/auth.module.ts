@@ -18,7 +18,7 @@ import { UserService } from 'core/http/user/user.service'
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FormsModule,
+    FormsModule, 
     ReactiveFormsModule
   
   ],

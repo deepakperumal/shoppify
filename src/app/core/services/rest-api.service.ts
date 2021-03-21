@@ -11,7 +11,7 @@ export class RestApiService
 
   getHeaders() {
     const token = this.storageService.getItem('token');
-    return token ? new HttpHeaders().set('auth-token', token) : null;
+    return token ? new HttpHeaders().set('auth-token', token) : null; 
   }
  
   get(link: string) {

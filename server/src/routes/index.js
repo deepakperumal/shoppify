@@ -5,10 +5,11 @@ const router = express.Router();
 const tokenValidation = require('../services/validations/token-validation.service')
 
 const authController = require('../controllers/auth.controller')
+const userController = require('../controllers/user.controller')
 
 router.post('/register',authController.register)
 router.post('/login',authController.login)
-
+router.get('/user/:id',tokenValidation.auth,userController.getUserById)
 router.get('/testjwt',tokenValidation.auth,(req,res)=>{
 
     res.send('secured route')

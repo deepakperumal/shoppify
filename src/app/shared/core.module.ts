@@ -10,6 +10,7 @@ import { StorageService } from 'core/services/storage.service'
 import { AuthGuard } from 'core/guards/auth-guard'
 import { RestApiService } from 'core/services/rest-api.service'
 import { CustomvalidationService } from 'core/services/custom-validation.service'
+import { AuthService } from 'core/services/auth.service'
 
 //Interceptors
 
@@ -24,6 +25,7 @@ import { HttpErrorInterceptor } from 'core/interceptors/http-error.interceptor'
         StorageService,
         RestApiService,
         CustomvalidationService,
+        AuthService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: HttpErrorInterceptor,
